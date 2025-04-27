@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krushiseva - Agriculture News</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      background-color: #4caf50; /* Green color for header */
+      color: #fff;
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .header img {
+      height: 75px; /* Adjusted logo size */
+      margin-right: 10px;
+    }
+
+    .content-container {
+      padding-top: 100px; /* Adjusted for fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .news-box {
+      background-color: #fff;
+      border-radius: 8px;
+      border: 2px solid #4caf50;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      max-width: 750px;
+      width: 90%;
+      max-height: 500px;
+      overflow-y: auto; /* Enables scrolling */
+    }
+
+    .news-item {
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-item h3 {
+      font-size: 1.2rem;
+      margin: 8px 0;
+    }
+
+    .news-item p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .news-item a {
+      display: inline-block;
+      color: #1e88e5;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .news-item a:hover {
+      text-decoration: underline;
+    }
+
+    .news-date {
+      font-size: 0.8rem;
+      color: #aaa;
+      float: right;
+    }
+
+    .go-back {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .go-back:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <img src="https://media.istockphoto.com/id/950945604/vector/newspaper-icon-green-square-button.jpg?s=1024x1024&w=is&k=20&c=pgn7dGnUlgoHEXf5X-j3YiBimTgACH5-DAjYqIAfY3k=" alt="Logo">
+    Agriculture News
+  </div>
+
+  <!-- Content -->
+  <div class="content-container">
+    <div class="news-box">
+      <!-- News Items -->
+      <div class="news-item">
+        <h3>Vintage Coffee Brews Up Domestic Expansion</h3>
+        <p>Amidst India's coffee boom, Vintage Coffee plans domestic expansion...</p>
+        <a href="https://www.thehindubusinessline.com/economy/agri-business/vintage-coffee-brews-up-domestic-expansion-amidst-indias-coffee-boom/article68905789.ece" target="_blank">Read more →</a>
+        <span class="news-date" data-offset-days="0"></span>
+      </div>
+
+      <div class="news-item">
+        <h3>Managed Farmland: A Trending Future Concept</h3>
+        <p>Managed farmland is emerging as a positive and sustainable agricultural trend...</p>
+        <a href="https://www.thehindubusinessline.com/economy/agri-business/managed-farmland-is-a-trending-future-positive-concept-know-why/article68904846.ece" target="_blank">Read more →</a>
+        <span class="news-date" data-offset-days="0"></span>
+      </div>
+
+      <div class="news-item">
+        <h3>India Gate Explores Mixed Spices & Rice Bran Oil</h3>
+        <p>India Gate diversifies beyond basmati into mixed spices and rice bran oil...</p>
+        <a href="https://economictimes.indiatimes.com/news/economy/agriculture/india-gate-sets-eyes-beyond-basmati-to-foray-into-mixed-spices-rice-bran-oil/articleshow/115622774.cms" target="_blank">Read more →</a>
+        <span class="news-date" data-offset-days="0"></span>
+      </div>
+
+      <div class="news-item">
+        <h3>Government Funds Innovations for Tomato Price Stability</h3>
+        <p>28 innovations funded to combat tomato price volatility and wastage...</p>
+        <a href="https://economictimes.indiatimes.com/news/economy/agriculture/government-funds-28-innovations-to-combat-tomato-price-volatility-and-wastage/articleshow/115567466.cms" target="_blank">Read more →</a>
+        <span class="news-date" data-offset-days="1"></span>
+      </div>
+
+      <div class="news-item">
+        <h3>"Andhra Pradesh government urged to move new Tenancy Bill in Assembly"</h3>
+        <p>government urged to move new Tenancy Bill in Assembly...</p>
+        <a href="https://www.thehindu.com/news/national/andhra-pradesh/andhra-pradesh-government-urged-to-move-new-tenancy-bill-in-assembly/article68860186.ece" target="_blank">Read more →</a>
+        <span class="news-date" data-offset-days="1"></span>
+      </div>
+
+      <div class="news-item">
+        <h3>Fifth Shipment of 720 Tonnes of Onion Reaches Delhi</h3>
+        <p>The government ships 720 tonnes of onions to stabilize market prices...</p>
+        <a href="https://economictimes.indiatimes.com/news/economy/agriculture/fifth-shipment-of-720-tonnes-of-onion-to-reach-delhi-on-november-21-government/articleshow/115455449.cms" target="_blank">Read more →</a>
+        <span class="news-date" data-offset-days="2"></span>
+      </div>
+    </div>
+
+    <!-- Go Back Button -->
+    <a href="Home.html" class="go-back">Go Back</a>
+  </div>
+
+  <script>
+    // Dynamically calculate and set the dates
+    document.querySelectorAll(".news-date").forEach((dateElement) => {
+      const offsetDays = parseInt(dateElement.getAttribute("data-offset-days"), 10);
+      const today = new Date();
+      const targetDate = new Date(today);
+      targetDate.setDate(today.getDate() - offsetDays);
+      const formattedDate = targetDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+      dateElement.textContent = formattedDate;
+    });
+  </script>
+</body>
+</html>

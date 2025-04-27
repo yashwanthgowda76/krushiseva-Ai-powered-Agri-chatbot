@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Change and Weather Forecast</title>
+  <style>
+    /* Original CSS - unchanged */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding-top: 80px; /* Added space for the fixed header */
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: white;
+      text-align: center;
+      background-color: #4CAF50; /* Green background */
+      width: 100%;
+      padding: 20px;
+      position: fixed; /* Fixed position at the top */
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    h1 img {
+      margin-right: 10px;
+      width: 60px; /* Increased size */
+      height: 60px; /* Adjust height if needed */
+    }
+
+    .weather-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 450px; /* Adjust width */
+      padding: 20px;
+      border: 3px solid #4CAF50; /* Green border for weather box */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: auto; /* Adjust height automatically */
+      margin-top: 100px; /* Add margin so it doesn't overlap with fixed header */
+    }
+
+    .weather-card h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #333;
+      text-align: center;
+    }
+
+    .current-weather {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .temperature {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+
+    .details {
+      margin-left: 20px;
+    }
+
+    .details span {
+      display: block;
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    .icon {
+      font-size: 2.5rem;
+      margin-left: auto;
+      color: #87ceeb;
+    }
+
+    .forecast {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .forecast-day {
+      text-align: center;
+      color: #666;
+    }
+
+    .forecast-day .icon {
+      font-size: 1.5rem;
+      margin: 5px 0;
+    }
+
+    .forecast-day span {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .message-box {
+      background-color: #f1f1f1;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      color: #555;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .go-back-button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: block;
+      width: 150px;
+      margin: 30px auto 0;
+    }
+
+    .go-back-button:hover {
+      background-color: #28a745;
+    }
+
+    /* Remove underline from the link */
+    a {
+      text-decoration: none;
+    }
+
+    .know-more {
+      margin-top: 10px;
+      display: block;
+      text-align: center;
+      background-color: #e74c3c; /* Red background */
+      padding: 10px 20px;
+      color: white;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .know-more:hover {
+      background-color: #c0392b; /* Darker red on hover */
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXR9sn-S124A7mYDKPnAAlkad3bUvKf4ZZhvX_4v_GwjraawziAB1NlGnnMkulwnpMuwI&usqp=CAU" alt="Climate Logo">
+    Climate Change and Weather Forecast
+  </h1>
+
+  <div class="weather-card">
+    <h2>Weather Forecast</h2>
+    <div class="current-weather">
+      <div class="temperature" id="current-temp">24°C</div>
+      <div class="details">
+        <span id="current-condition">Partly Cloudy</span>
+        <span>12 km/h</span>
+        <span>65%</span>
+      </div>
+      <div class="icon" id="current-icon">☁️</div>
+    </div>
+
+    <div class="forecast">
+      <div class="forecast-day">
+        <div id="day1">Tomorrow</div>
+        <div class="icon">☀️</div>
+        <span>26°C</span>
+      </div>
+      <div class="forecast-day">
+        <div id="day2">Wed</div>
+        <div class="icon">🌧️</div>
+        <span>23°C</span>
+      </div>
+      <div class="forecast-day">
+        <div id="day3">Thu</div>
+        <div class="icon">☁️</div>
+        <span>22°C</span>
+      </div>
+      <div class="forecast-day">
+        <div id="day4">Fri</div>
+        <div class="icon">☀️</div>
+        <span>25°C</span>
+      </div>
+    </div>
+
+    <div class="message-box" id="message-box">
+      Weather conditions are mild today.
+    </div>
+
+    <a href="https://weather.com/en-IN/weather/today/l/13.03,77.69?par=google" class="know-more" target="_blank">
+      Know More
+    </a>
+    
+  </div>
+
+  <a href="Home.html">
+    <button class="go-back-button">Go Back</button>
+  </a>
+
+  <script>
+    // Weekday names
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    // Get today's date and day
+    const today = new Date();
+    const currentDay = today.getDay();
+
+    // Update forecast day names dynamically
+    for (let i = 0; i < 4; i++) {
+      const forecastDay = (currentDay + i + 1) % 7; // Rotate days for forecast
+      const dayElement = document.getElementById(`day${i + 1}`);
+      dayElement.textContent = i === 0 ? "Tomorrow" : weekdays[forecastDay];
+    }
+
+    // Change weather based on the current time of day
+    const currentHour = today.getHours();
+    const currentCondition = document.getElementById("current-condition");
+    const currentTemp = document.getElementById("current-temp");
+    const currentIcon = document.getElementById("current-icon");
+    const messageBox = document.getElementById("message-box");
+
+    if (currentHour >= 6 && currentHour < 8) {
+      currentCondition.textContent = "Mild";
+      currentTemp.textContent = "18°C";
+      currentIcon.textContent = "🌤️";
+      messageBox.textContent = "Cool and mild morning.";
+    } else if (currentHour >= 8 && currentHour < 16) {
+      currentCondition.textContent = "Sunny";
+      currentTemp.textContent = "30°C";
+      currentIcon.textContent = "☀️";
+      messageBox.textContent = "Sunny and bright day.";
+    } else if (currentHour >= 16 && currentHour < 20) {
+      currentCondition.textContent = "Cloudy";
+      currentTemp.textContent = "22°C";
+      currentIcon.textContent = "☁️";
+      messageBox.textContent = "A cloudy evening ahead.";
+    } else {
+      currentCondition.textContent = "Clear Night";
+      currentTemp.textContent = "15°C";
+      currentIcon.textContent = "🌙";
+      messageBox.textContent = "A calm and clear night.";
+    }
+  </script>
+</body>
+</html>
